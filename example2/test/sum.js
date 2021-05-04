@@ -43,8 +43,9 @@ describe('#sum', () => {
 
     // run with `npm test -- -- delay`
     // if `run()` method is never called, the tests will never run
-    setTimeout(() => {
-        run();
-    }, 5000);
+    
+    // setTimeout(() => {
+    //     run();
+    // }, 5000);
 
 });

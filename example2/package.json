@@ -7,11 +7,12 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "cross-env NODE_ENV=production mocha"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chai": "^4.3.4"
+    "chai": "^4.3.4",
+    "cross-env": "^7.0.3"
   }
 }
