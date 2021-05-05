@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mocha Tests</title>
+        
+        <!-- Include Mocha CSS styles -->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css">
+    </head>
+
+    <body>
+        <div id="mocha"></div>
+
+        <!-- Add Chai assertion library -->
+        <script src="http://chaijs.com/chai.js"></script>
+        
+        <!-- Add Mocha test library -->
+        <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+
+        <script>
+            var expect = chai.expect;
+
+            // setup Mocha to use bdd interface
+            mocha.setup('bdd');
+        </script>
+
+        <script src="./sum.js"></script>
+        <script src="./sum.test.js"></script>
+
+        <script>
+            mocha.run();
+        </script>
+    </body>
+
+</html>
