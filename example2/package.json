@@ -7,13 +7,15 @@
     "test": "test"
   },
   "scripts": {
-    "test": "cross-env NODE_ENV=production mocha"
+    "test": "cross-env NODE_ENV=production mocha",
+    "test:browser": "SET PORT=3002 && cd public && live-server"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.4",
     "cross-env": "^7.0.3",
+    "live-server": "^1.2.1",
     "node-fetch": "^2.6.1"
   }
 }
