@@ -1,0 +1,8 @@
+assert.x checks for:
+    - .equal: equality (==)
+    - .strictEqual: strict equality (===)
+    - .notEqual: inverse checks to ones above
+    - .isTrue
+    - .isFalse
+
+    full list: https://www.chaijs.com/api/assert/

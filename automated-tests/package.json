@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "chai": "^4.3.4",
+    "live-server": "^1.2.1",
+    "mocha": "^8.3.2",
+    "sinon": "^10.0.0"
+  },
+  "name": "automated-tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha",
+    "test:browser": "SET PORT=3002 && cd public && live-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
