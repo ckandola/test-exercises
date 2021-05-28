@@ -1,0 +1,85 @@
+/*
+    Jest tests complete once they reach the end of
+    their execution, so this test does not work
+    as intended:
+*/
+test('the data is peanut butter', () => {
+    function callback(data) {
+        expect(data).toBe('peanut butter');
+    }
+
+    fetchData(callback);
+});
+
+/* test completes as soon as fetchData completes,
+    before ever calling the callback.
+    The solution is to use `done` arg:
+*/
+
+test('the data is peanut butter', done => {
+    function callback(data) {
+        try {
+            expect(data).toBe('peanut butter');
+            done();
+        } catch(error) {
+            done(error);
+        }
+    }
+
+    fetchData(callback);
+});
+
+// Promises:
+test('the data is peanut butter', () => {
+    return fetchData().then(data => {
+        expect(data).toBe('peanut butter');
+    });
+});
+
+/* if you expect error from promise, use `.catch`
+and `expect.assertations`, otherwise a fulfilled
+promise won't fail the test.
+*/
+test('the fetch fails with an error', () => {
+    expect.assertations(1);
+    return fetchData()
+        .catch(e => expect(e).toMatch('error'));
+});
+
+// .resolves and .rejects
+test('the data is peanut butter', () => {
+    return expect(fetchData())
+        .resolves.toBe('peanut butter');
+});
+
+test('the fetch fails with an error', () => {
+    return expect(fetchData())
+        .rejects.toMatch('error');
+});
+
+// async/await 
+test('the data is peanut butter', async () => {
+    const data = await fetchData();
+    expect(data).toBe('peanut butter');
+});
+
+test('the fetch fails with an error', async () => {
+    expect.assertations(1);
+    try {
+        await fetchData();
+    } catch (err) {
+        expect(err).toMatch('error');
+    }
+});
+
+// combine async/await with .resolves/.rejects
+// async/await are effectively syntactic sugar here
+test('the data is peanut butter', async () => {
+    await expect(fetchData())
+        .resolves.toBe('peanut butter');
+});
+
+test('the fetch fails with an error', async () => {
+    await expect(fetchData())
+        .rejects.toMatch('error');
+});

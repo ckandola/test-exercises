@@ -1,0 +1,27 @@
+beforeEach
+afterEach
+
+both can handle asynchronous code in the same way 
+that tests can. 
+
+beforeAll,
+afterAll
+
+Group tests together in a describe block. When inside
+a describe block, the `before` and `after` blocks 
+only apply to tests within that block.
+
+All describe handlers are executed before the actual
+tests, so it may make sense to do setup and teardown
+inside `before` and `after` handlers rather than in
+the describe blocks.
+
+Once describe blocks are complete, Jest runs all the
+tests serially in the order they were encountered in
+the collection phase.
+
+When a test is failing, check if it still fails when
+it runs alone with `test.only()`. If not, then some
+shared state should be cleared with `beforeEach`.
+
+
