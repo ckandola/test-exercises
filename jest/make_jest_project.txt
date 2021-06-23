@@ -1,0 +1,6 @@
+mkdir project_name
+cd project_name
+npx gitignore node
+npm init -y
+yarn
+yarn add react react-native
