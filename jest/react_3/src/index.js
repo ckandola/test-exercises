@@ -1,6 +1,13 @@
-console.log("Hello Webpack Project");
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const button0 = document.getElementById('btn-0');
-button0.onclick = () => {
-    console.log("I was clicked!! Madness!");
-}
+import App from './App';
+
+const title = 'React and Webpack and Babel';
+
+ReactDOM.render(
+    <App title={title} />,
+    document.getElementById('app')
+);
+
+module.hot.accept();

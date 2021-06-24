@@ -1,0 +1,36 @@
+import returnFive from './otherFile';
+
+/* 
+Part of intro
+console.log("Hello Webpack Project");
+
+const button0 = document.getElementById('btn-0');
+button0.onclick = () => {
+    console.log("I was clicked!! Madness!");
+} 
+
+console.log(returnFive());
+
+*/
+
+
+/* Doesn't seem to work
+console.log('\nTesting a babel plugin\n----------')
+
+const code = 'bigBox::getWeight()';
+
+const box = {
+    weight: 2,
+    getWeight() {
+        return this.weight;
+    },
+};
+
+const { getWeight } = box;
+console.log(box.getWeight());
+const bigBox = { weight: 10 };
+
+require("@babel/core").transformSync(code, {
+    plugins: ["@babel/plugin-proposal-function-bind"],
+}); */
+

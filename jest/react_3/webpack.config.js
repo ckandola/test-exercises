@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 module.exports = {
     /* 
@@ -8,25 +9,30 @@ module.exports = {
     
     // the result and where it resides
     output: {
-        path: path.resolve(__dirname, '/public'),
+        path: path.resolve(__dirname, './public'),
         filename: 'bundle.js'
     },
+
+    plugins:
+        [new webpack.HotModuleReplacementPlugin()]
+    ,
 
     // where we serve application to browser
     devServer: {
         contentBase: path.resolve(__dirname, './public'),
+        hot: true,
     },
 
     module: {
         rules: [
             {
-                test: /\.(js)$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
             }
         ]
     },
     resolve: {
-        extensions: ['*', '.js']
+        extensions: ['*', '.js', '.jsx']
     }
 };
